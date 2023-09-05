@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// User Controller
+
+// Rotta get che porta al form di login 
+Route::get('/login', [UserController::class, 'login'])->name('auth.login');
+// Rotta get che porta al form di registrazione 
+Route::get('/register', [UserController::class, 'create'])->name('auth.register');
+// Rotta get che porta al form di recupero password 
+Route::get('/forgot-password', [UserController::class, 'forgotPassword'])->name('auth.forgot-password');
+
+
+// Article Controler
+
+// Rotta get che porta alla vista con il form per la creazione articoli
+Route::get('/article/create', [ArticleController::class, 'create'])->name('articles.create')->middleware(['auth','verified']);

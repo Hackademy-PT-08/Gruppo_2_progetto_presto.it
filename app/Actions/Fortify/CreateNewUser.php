@@ -23,6 +23,7 @@ class CreateNewUser implements CreatesNewUsers
             'name' => ['required', 'string', 'max:255'],
             'surname'=> ['required', 'string', 'max:255'],
             'birthday'=> ['required', 'date', 'max:255'],
+            'phone_number'=>['required', 'string', 'max:10', 'min:10'],
             'address'=> ['required', 'string', 'max:255'],
             'city'=> ['required', 'string', 'max:255'],
             'email' => [
@@ -41,8 +42,9 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
             'surname'=> $input['surname'],
             'city'=> $input['city'],
-            'address'=> ['address'],
-            'birthday'=>['birthday']
+            'phone_number'=>$input['phone_number'],
+            'address'=> $input['address'],
+            'birthday'=>$input['birthday']
         ]);
     }
 }
