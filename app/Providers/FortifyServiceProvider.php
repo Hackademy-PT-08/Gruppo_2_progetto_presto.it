@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\User;
+
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Laravel\Fortify\Fortify;

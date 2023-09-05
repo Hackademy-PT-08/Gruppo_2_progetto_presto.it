@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Actions\Fortify;
-
+use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -22,8 +22,17 @@ class CreateNewUser implements CreatesNewUsers
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'surname'=> ['required', 'string', 'max:255'],
-            'birthday'=> ['required', 'date', 'max:255'],
-            'phone_number'=>['required', 'string', 'max:10', 'min:10'],
+            'birthday'=> ['required', 'date', 
+            function ($attribute, $value, $fail) {
+                $birthdate = Carbon::createFromFormat('Y-m-d', $value);
+                $age = $birthdate->diffInYears(Carbon::now());
+    
+                if ($age < 18) {
+                    $fail('Devi avere almeno 18 anni per registrarti.');
+                }
+            },
+        ],
+            'phone_number'=>['required', 'string', 'max:10', 'min:10', Rule::unique(User::class),],
             'address'=> ['required', 'string', 'max:255'],
             'city'=> ['required', 'string', 'max:255'],
             'email' => [

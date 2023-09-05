@@ -1,6 +1,6 @@
 <x-layout>
     <!-- vista per email di verifica -->
-    <p>è stata inviata una mail di conferma </p>
+    <p>{{auth()->user()->name}} è stata inviata una mail di conferma all'indirizzo {{auth()->user()->email}}  </p>
 
     <!-- form per invio nuova email -->
     <form action="/email/verification-notification" method="post">
