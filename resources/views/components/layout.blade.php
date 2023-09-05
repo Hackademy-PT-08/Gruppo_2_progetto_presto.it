@@ -8,6 +8,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
+    <header>
+        <x-navbar></x-navbar>
+    </header> 
+    <main></main>
+    <footer></footer>
+
 
 {{$slot}}
     

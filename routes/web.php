@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
 
@@ -35,3 +36,4 @@ Route::get('/profile', [UserController::class, 'edit'])->middleware(['auth','ver
 
 // Rotta get che porta alla vista con il form per la creazione articoli
 Route::get('/article/create', [ArticleController::class, 'create'])->name('articles.create')->middleware(['auth','verified']);
+Route::get('/',[HomeController::class,'index'])->name('home.index');
