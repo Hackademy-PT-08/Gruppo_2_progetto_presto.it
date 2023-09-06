@@ -1,6 +1,6 @@
 <div>
 
-<!-- eorri di defaul per errata compliazione del form livewire -->
+<!-- errorri di defaul per errata compliazione del form livewire
 
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -11,14 +11,32 @@
         </ul>
     </div>
 @endif
+ -->
 
 <!-- input per inserimento titolo -->
-<input type="text" wire:model="title" placeholder="Titolo" value="{{$title}}">
+<div class="mb-3">
+<label for="title"> Titolo Annuncio</label>
+<input type="text" wire:model="title" placeholder="Titolo" value="{{$title}}" @error('title') is-invalid @enderror>
+@error('title')
+    {{$message}}
+@enderror
+</div>
 <!-- input per inserimento descrizione -->
-<textarea wire:model="body" cols="30" rows="10" placeholder="Descrizione">{{$body}}</textarea>
+<div class="mb-3">
+<label for="body"> Descrizione</label>
+<textarea wire:model="body" cols="30" rows="10" placeholder="Descrizione" @error('body') is-invalid @enderror>{{$body}}</textarea>
+@error('body')
+    {{$message}}
+@enderror
+</div>
 <!-- input per inserimento prezzo -->
-<input type="number" wire:model="price" placeholder="€" value="{{$price}}">
-
+<div class="mb-3">
+<label for="price"> Prezzo</label>
+<input type="number" wire:model="price" placeholder="€" value="{{$price}}" @error('price') is-invalid @enderror>
+@error('price')
+    {{$message}}
+@enderror
+</div>
 
 <!-- select per scegliere la categoria -->
 

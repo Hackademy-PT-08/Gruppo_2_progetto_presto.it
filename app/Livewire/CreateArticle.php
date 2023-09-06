@@ -16,15 +16,22 @@ class CreateArticle extends Component
         $categories= Category::all();
         return view('livewire.create-article', ['categories'=>$categories]);
     }
+
+    //messaggi di errore custommizzati
+    protected $messages =
+    ['required'=>'Il campo :attribute è obbligatorio',
+    'min'=>'Inserisci in :attribute almeno 8 caratteri',
+    'numeric'=>'Il campo :attribute deve essere numerico',];
+
     // funzione di salvataggio articoli nel database
     public function store()
     {
         //validazione degli input del form
         $validated = $this->validate([
-            'title' => 'required',
-            'body' => 'required',
+            'title' => 'required|min:8',
+            'body' => 'required|min:8',
             'price' => 'required|numeric',
-            'category'=> 'required'
+            'category'=> 'required',
         ]);
 
         $article = new Article;
