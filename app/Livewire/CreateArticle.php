@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\Article;
 use Livewire\Component;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 
 class CreateArticle extends Component
 {
@@ -32,6 +33,7 @@ class CreateArticle extends Component
         $article->body = $this->body;
         $article->price = $this->price;
         $article->category_id=$this->category;
+        $article->user_id=Auth::user()->id;
         $article->save();
 
         $this->title = '';
