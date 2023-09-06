@@ -11,19 +11,40 @@
             {{ session('status') }}
         </div>
     @endif
-    <!-- form per il login -->
-    <form action="" method="post">
-        <!-- token validazione form -->
-        @csrf
-        <!-- input di login per email -->
-        <input type="email" name="email" id="email" placeholder="mario.rossi@gmail.com">
-        <!-- input di login per password -->
-        <input type="password" name="password" id="password">
+   
+    <div class="container d-flex justify-content-center mt-5">
+        <div class="row">
+            <h1 class="text-center py-5 col-12">
+                Benvenuto!
+                <br>
+                Effettua il Login
+            </h1>
+            <!-- form per il login -->
+            <form action="/login" method="post">
+                <!-- token validazione form -->
+                @csrf
+                <div class="row ">
 
-        <!-- input per submit login -->
-        <input type="submit" value="Accedi">
+                    <div class="clol-12 d-flex justify-content-around">
+                        <!-- input di login per email -->
+                        <input class="text-center" type="email" name="email" id="email" placeholder="mario.rossi@gmail.com">
+                        <!-- input di login per password -->
+                        <input class="text-center" type="password" name="password" id="password" placeholder="password">
+                    </div>
+
+                
+                </div>
+                <div class="col-12 d-flex justify-content-center py-3 pb-5">
+                    <!-- input per submit login -->
+                    <input type="submit" value="Accedi">
+
+                </div>
+
+                
 
 
-    </form>
+            </form>
+        </div>      
+    </div>
 
 </x-layout>
