@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(60, 61, 63);
+}
+.navbar-brand {
+    font-size: 50px;
+}
+.hero {
+    background-image: url('../../public/img/Logo_2.JPG');
+    background-repeat: inherit ;
+    background-attachment: fixed;
+    background-size: cover;
+    height:600px ;
+}
