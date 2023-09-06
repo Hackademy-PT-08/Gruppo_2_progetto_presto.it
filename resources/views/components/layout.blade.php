@@ -6,16 +6,22 @@
     <title>Document</title>
     <!-- importo i file js e css presenti in resources -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- blade per lo stile livewire -->
+    @livewireStyles
 </head>
 <body>
     <header>
-        <x-navbar></x-navbar>
+        <x-navbar/>
     </header> 
-    <main></main>
-    <footer></footer>
+    <main>
+        {{$slot}}
+    </main>
+    <footer>
+       
+    </footer>
 
 
-{{$slot}}
-    
+    <!-- blade per il javascript di livewire -->
+    @livewireScripts 
 </body>
 </html>

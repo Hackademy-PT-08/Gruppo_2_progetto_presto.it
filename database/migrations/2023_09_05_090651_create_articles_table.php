@@ -11,9 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
+         
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->text('title');
+            $table->text('body');
+            $table->decimal('price', 8, 2);
+            
         });
     }
 

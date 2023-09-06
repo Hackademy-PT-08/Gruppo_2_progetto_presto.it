@@ -7,14 +7,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             @if(auth()->check())
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
-                <form action="/logout" method="post">
-                    @csrf
-                    <input type="submit" value="logout">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">
+                  <form action="/logout" method="post">
+                      @csrf
+                      <input type="submit" value="logout">
 
-                </form></a>
-            </li>
+                  </form></a>
+              </li>
             @else
             <li class="nav-item">
               <a class="nav-link" href="{{route('auth.login')}}">Login</a>
