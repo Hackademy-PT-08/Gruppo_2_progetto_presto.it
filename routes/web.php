@@ -16,10 +16,6 @@ use App\Http\Controllers\ArticleController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 // User Controller
 
 // Rotta get che porta al form di login 
@@ -36,4 +32,8 @@ Route::get('/profile', [UserController::class, 'edit'])->middleware(['auth','ver
 
 // Rotta get che porta alla vista con il form per la creazione articoli
 Route::get('/article/create', [ArticleController::class, 'create'])->name('articles.create')->middleware(['auth','verified']);
+
+// HOME Controller
+
+// Rotta che porta alla hompage del sito
 Route::get('/',[HomeController::class,'index'])->name('home.index');

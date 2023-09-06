@@ -15,6 +15,9 @@
 
                   </form></a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{route('articles.create')}}">Aggiungi Annuncio</a>
+              </li>
             @else
             <li class="nav-item">
               <a class="nav-link" href="{{route('auth.login')}}">Login</a>
