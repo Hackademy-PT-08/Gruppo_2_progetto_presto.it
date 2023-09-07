@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class CreateArticle extends Component
 {
     // dichiaro gli attributi presenti all'interno del componente livewire
-    public $title, $body, $message, $price, $category;
+    public $title, $body, $successMessage, $price, $category;
     public function render()
     {
         $categories= Category::all();
@@ -20,7 +20,7 @@ class CreateArticle extends Component
     //messaggi di errore custommizzati
     protected $messages =
     ['required'=>'Il campo :attribute è obbligatorio',
-    'min'=>'Inserisci in :attribute almeno 8 caratteri',
+    'min'=>'Inserisci un :attribute almeno 8 caratteri',
     'numeric'=>'Il campo :attribute deve essere numerico',];
 
     // funzione di salvataggio articoli nel database
@@ -46,7 +46,7 @@ class CreateArticle extends Component
         $this->title = '';
         $this->body = '';
         $this->price = '';
-        $this->message = 'Articolo aggiunto con successo';
+        $this->successMessage = 'Articolo aggiunto con successo';
        
     }
 

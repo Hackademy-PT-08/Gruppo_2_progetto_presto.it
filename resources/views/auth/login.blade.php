@@ -12,39 +12,41 @@
         </div>
     @endif
    
-    <div class="container d-flex justify-content-center mt-5">
-        <div class="row">
-            <h1 class="text-center py-5 col-12">
-                Benvenuto!
-                <br>
-                Effettua il Login
-            </h1>
-            <!-- form per il login -->
-            <form action="/login" method="post">
-                <!-- token validazione form -->
-                @csrf
-                <div class="row ">
-
-                    <div class="clol-12 d-flex justify-content-around">
-                        <!-- input di login per email -->
-                        <input class="text-center" type="email" name="email" id="email" placeholder="mario.rossi@gmail.com">
-                        <!-- input di login per password -->
-                        <input class="text-center" type="password" name="password" id="password" placeholder="password">
+    <div class="container mt-4 py-5">
+        <div class="card">
+            <div class="card-body py-5">
+                <div class="row py-1 mt-2">
+                    <div class="col-md-4 d-flex align-items-center justify-content-center form__padding">
+                        <img src="https://i.pinimg.com/originals/8b/44/51/8b4451665d6b2139e29f29b51ffb1829.png" alt="Lo Image" class=" form__image img-fluid">
                     </div>
+                    <!-- form per il login -->
+                    <form class="col-md-8 row justify-content-center align-items-center" action="/login" method="post">
+                        <!-- token validazione form -->
+                        @csrf
+                        <!-- titolo del form -->
+                        <h5 class="card-title text-center col-8">Benvenuto! <br> Effettua il login </h5>
 
-                
+                        <!-- input di login per email -->
+                        <input class="text-center col-8 py-1 my-2" type="email" name="email" id="email" placeholder="mario.rossi@gmail.com">
+                        <!-- input di login per password -->
+                        <input class="text-center col-8 py-1 my-2" type="password" name="password" id="password" placeholder="password">
+                        <!-- input per submit login -->
+                        <input class="form__submit-btn col-8 py-1 my-2" type="submit" value="Accedi">
+                        <div class="col-8 d-flex justify-content-around py-1 my-2">
+                                                        
+                            
+                            <a class="form__link" href="{{route('auth.forgot-password')}}">Password dimenticata?</a>
+                            </p>
+                            <p> <a class="form__link" href="#">Crea il tuo account!</a></p>
+                        </div>
+                        
+                        
+                        
+                        
+                    </form>
                 </div>
-                <div class="col-12 d-flex justify-content-center py-3 pb-5">
-                    <!-- input per submit login -->
-                    <input type="submit" value="Accedi">
-
-                </div>
-
-                
-
-
-            </form>
-        </div>      
+            </div>
+        </div>
     </div>
-
+    
 </x-layout>

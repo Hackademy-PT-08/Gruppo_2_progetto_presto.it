@@ -53,6 +53,6 @@
 <!-- input per salvataggio dati nel database -->
 <input type="button" wire:click="store" value="Aggiungi">
 <!-- messaggio in caso successo per avvenuto inserimento dell'articolo -->
-<p class="text-success">{{$message}}</p>
+<p class="text-success">{{$successMessage}}</p>
 
 </div>

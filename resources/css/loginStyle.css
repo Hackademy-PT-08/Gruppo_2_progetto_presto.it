@@ -1,0 +1,31 @@
+
+/* Contenitore circolare */
+.form__padding {
+  width: 210px;
+  height: 210px;
+  background: #f2f2f2;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+  
+/* Immagine all'interno del contenitore circolare */
+.form__image {
+  max-width: 100%;
+  width: 60%;
+  height: auto; /* Imposta l'altezza automaticamente per mantenere le proporzioni */
+} 
+ 
+.form__submit-btn {
+  background: #1fcc44;
+  cursor: pointer;
+}
+  
+.form__submit-btn:hover {
+  background: #ff3f70;
+}
+ 
+/* per schermi più piccoli */
+@media screen and (max-width: 768px) {
+   
+}
+  
