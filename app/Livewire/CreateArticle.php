@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class CreateArticle extends Component
 {
     // dichiaro gli attributi presenti all'interno del componente livewire
-    public $title, $body, $successMessage, $price, $category;
+    public $Titolo, $Descrizione, $successMessage, $Prezzo, $Categoria;
     public function render()
     {
         $categories= Category::all();
@@ -28,18 +28,18 @@ class CreateArticle extends Component
     {
         //validazione degli input del form
         $validated = $this->validate([
-            'title' => 'required|min:8',
-            'body' => 'required|min:8',
-            'price' => 'required|numeric',
-            'category'=> 'required',
+            'Titolo' => 'required|min:8',
+            'Descrizione' => 'required|min:8',
+            'Prezzo' => 'required|numeric',
+            'Categoria'=> 'required',
         ]);
 
         $article = new Article;
 
-        $article->title = $this->title;
-        $article->body = $this->body;
-        $article->price = $this->price;
-        $article->category_id=$this->category;
+        $article->title = $this->Titolo;
+        $article->body = $this->Descrizione;
+        $article->price = $this->Prezzo;
+        $article->category_id=$this->Categoria;
         $article->user_id=Auth::user()->id;
         $article->save();
 

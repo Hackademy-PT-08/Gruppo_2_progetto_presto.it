@@ -23,7 +23,7 @@
         <!-- input per la data di nascita -->
         <input type="date" name="birthday" id="birthday">
         <!-- input per il indirizzo -->
-        <input type="text" name="address" id="address" placeholder="Idirizzo di residenza">
+        <input type="text" name="address" id="address" placeholder="Indirizzo di residenza">
         <!-- input per la città -->
         <input type="text" name="city" id="city" placeholder="Città">
         <!-- input per numero di telefono -->

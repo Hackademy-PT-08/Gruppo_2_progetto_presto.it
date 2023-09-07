@@ -16,7 +16,7 @@
 <!-- input per inserimento titolo -->
 <div class="mb-3">
 <label for="title"> Titolo Annuncio</label>
-<input type="text" wire:model="title" placeholder="Titolo" value="{{$title}}" @error('title') is-invalid @enderror>
+<input type="text" wire:model="Titolo" placeholder="Titolo" value="{{$Titolo}}" @error('Titolo') is-invalid @enderror>
 @error('title')
     {{$message}}
 @enderror
@@ -24,7 +24,7 @@
 <!-- input per inserimento descrizione -->
 <div class="mb-3">
 <label for="body"> Descrizione</label>
-<textarea wire:model="body" cols="30" rows="10" placeholder="Descrizione" @error('body') is-invalid @enderror>{{$body}}</textarea>
+<textarea wire:model="Descrizione" cols="30" rows="10" placeholder="Descrizione" @error('Descrizione') is-invalid @enderror>{{$Descrizione}}</textarea>
 @error('body')
     {{$message}}
 @enderror
@@ -32,7 +32,7 @@
 <!-- input per inserimento prezzo -->
 <div class="mb-3">
 <label for="price"> Prezzo</label>
-<input type="number" wire:model="price" placeholder="€" value="{{$price}}" @error('price') is-invalid @enderror>
+<input type="number" wire:model="Prezzo" placeholder="€" value="{{$Prezzo}}" @error('Prezzo') is-invalid @enderror>
 @error('price')
     {{$message}}
 @enderror
@@ -42,7 +42,7 @@
 
 <div>
     <label for="category">Categoria</label>
-    <select wire:model="category" id="category" class="form-control">
+    <select wire:model="Categoria" id="category" class="form-control">
         <option value="">Scegli la categoria</option>
         @foreach($categories as $category)
             <option value="{{$category->id}}">{{$category->name}}</option>
