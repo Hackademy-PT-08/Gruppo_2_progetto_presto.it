@@ -32,6 +32,8 @@ Route::get('/profile', [UserController::class, 'edit'])->middleware(['auth','ver
 
 // Rotta get che porta alla vista con il form per la creazione articoli
 Route::get('/article/create', [ArticleController::class, 'create'])->name('articles.create')->middleware(['auth','verified']);
+// Rotta get che porta alla vista che mostra tutti gli articoli
+Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
 
 // HOME Controller
 
