@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index(){
         $categories= Category::all();
-        $lastArticles= Article::take(8)->get()->sortByDesc('created_at');
+        $lastArticles= Article::orderBy('created_at', 'desc')->take(8)->get();
         return view('Home.index', ['lastArticles'=>$lastArticles], ['categories'=>$categories]);
     }
 }
