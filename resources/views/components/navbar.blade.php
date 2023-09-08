@@ -42,10 +42,10 @@
               </li>
             @else
             <li class="nav-item">
-              <a class="nav-link" href="{{route('auth.login')}}">Login</a>
+              <a class="nav-link" href="/login">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('auth.register')}}">Registrati</a>
+              <a class="nav-link" href="/register">Registrati</a>
             </li>
             @endif
           </ul>

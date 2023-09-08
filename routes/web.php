@@ -19,10 +19,9 @@ use App\Http\Controllers\CategoryController;
 
 // User Controller
 
-// Rotta get che porta al form di login 
-Route::get('/login', [UserController::class, 'login'])->name('auth.login');
-// Rotta get che porta al form di registrazione 
-Route::get('/register', [UserController::class, 'create'])->name('auth.register');
+
+
+
 // Rotta get che porta al form di recupero password 
 Route::get('/forgot-password', [UserController::class, 'forgotPassword'])->name('auth.forgot-password');
 // Rotta get che porta al form di modifica del profilo utente
