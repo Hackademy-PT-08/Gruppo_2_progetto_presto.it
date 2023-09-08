@@ -12,7 +12,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories= Category::all();
+        
+        return view('categories.index', ['categories'=>$categories]);
     }
 
     /**
@@ -34,9 +36,11 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Category $category)
+    public function show(Category $category, $categoryName)
     {
-        //
+        $category = Category::where('name', $categoryName)->first();
+
+        return view('categories.show', ['category'=>$category]);
     }
 
     /**

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,10 @@ Route::get('/article/{id}', [ArticleController::class, 'show'])->name('articles.
 
 // Rotta che porta alla hompage del sito
 Route::get('/',[HomeController::class,'index'])->name('home.index');
+
+// Category Controller
+
+// Rotta che porta alla vista con tutte le categorie del sito
+Route::get('/categories',[CategoryController::class,'index'])->name('categories.index');
+// Rotta get che porta alla vista che mostra il dettaglio categoria
+Route::get('/categories/{categoryName}', [CategoryController::class, 'show'])->name('categories.show');

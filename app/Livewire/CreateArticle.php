@@ -43,9 +43,10 @@ class CreateArticle extends Component
         $article->user_id=Auth::user()->id;
         $article->save();
 
-        $this->title = '';
-        $this->body = '';
-        $this->price = '';
+        $this->Titolo = '';
+        $this->Descrizione = '';
+        $this->Prezzo = '';
+        $this->Categoria = '';
         $this->successMessage = 'Articolo aggiunto con successo';
        
     }

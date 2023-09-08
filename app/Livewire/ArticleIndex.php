@@ -15,7 +15,7 @@ class ArticleIndex extends Component
     {
         Paginator::useBootstrap();
         $articles=Article::paginate(6);
-        // $pages=Article::paginate(6);
+       
        
         return view('livewire.article-index', ['articles'=>$articles]);
     }
