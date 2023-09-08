@@ -1,6 +1,6 @@
 <div>
     <div class="container py-5">
-        <div class="row">
+        <div class="row justify-content-center">
             
             @foreach($articles as $article)
             
@@ -15,7 +15,7 @@
                             
                        
                             <p class="card-text">{{$article->body}}</p>
-                            <a href="#" class="card-link">Card link</a>
+                            <a href="{{route('articles.show', [$article->id])}}" class="card-link">Dettaglio</a>
                             <a href="#" class="card-link">Annuncio di: {{$article->user->name}}</a>
                         </div>
                     </div>
@@ -24,5 +24,8 @@
             @endforeach
         </div>
     </div>
-   {{$articles->links()}}
+    <div class="container py-2">
+        {{$articles->links()}}
+    </div>
+   
 </div>

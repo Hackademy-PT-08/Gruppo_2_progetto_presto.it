@@ -34,6 +34,8 @@ Route::get('/profile', [UserController::class, 'edit'])->middleware(['auth','ver
 Route::get('/article/create', [ArticleController::class, 'create'])->name('articles.create')->middleware(['auth','verified']);
 // Rotta get che porta alla vista che mostra tutti gli articoli
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
+// Rotta get che porta alla vista che mostra il dettaglio articolo
+Route::get('/article/{id}', [ArticleController::class, 'show'])->name('articles.show');
 
 // HOME Controller
 

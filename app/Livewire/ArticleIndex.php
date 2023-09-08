@@ -13,6 +13,7 @@ class ArticleIndex extends Component
     
     public function render()
     {
+        Paginator::useBootstrap();
         $articles=Article::paginate(6);
         // $pages=Article::paginate(6);
        
