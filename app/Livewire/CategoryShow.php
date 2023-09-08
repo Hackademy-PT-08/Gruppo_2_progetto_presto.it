@@ -18,9 +18,9 @@ class CategoryShow extends Component
     {
         Paginator::useBootstrap();
         $category=Category::find($this->categoryId);
-        $currentCategory=$category->articles()->paginate(3);
+        $currentCategory=$category->articles()->paginate(6);
         
-        // $articles=Article::paginate(6);
+      
         return view('livewire.category-show', ['category'=>$currentCategory]);
     }
 }

@@ -8,6 +8,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- blade per lo stile livewire -->
     @livewireStyles
+    <script src="https://kit.fontawesome.com/b8bf2cd9cb.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>

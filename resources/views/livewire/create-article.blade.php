@@ -1,18 +1,5 @@
 <div>
 
-<!-- errorri di defaul per errata compliazione del form livewire
-
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
- -->
-
 <!-- input per inserimento titolo -->
 <div class="mb-3">
 <label for="title"> Titolo Annuncio</label>
