@@ -13,7 +13,7 @@
               </a>
                <ul id="dropdownMenu" class="dropdown-menu">
                 @foreach($categories as $category)
-                <li><a class="dropdown-item" href="{{route('categories.show', [$category->name])}}">{{$category->name}}</a></li>
+                <li><a class="dropdown-item" href="{{route('categories.show', [ str_replace( ' ', '-', strtolower($category->name) )])}}">{{$category->name}}</a></li>
                 @endforeach
                 
               </ul>

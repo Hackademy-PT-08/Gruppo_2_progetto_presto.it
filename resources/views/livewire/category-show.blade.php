@@ -2,8 +2,8 @@
     
 <div class="container py-5">
         <div class="row justify-content-center">
-            @if(count($category->articles)>0)
-            @foreach($category->articles as $article)
+            @if(count($category)>0)
+            @foreach($category as $article)
             
             
                 <div class="col-4 py-3">
@@ -24,7 +24,7 @@
             
             @endforeach
             <div class="container py-2">
-                {{$articles->links()}}
+                {{$category->links()}}
             </div>
             @else
             <p>Non sono presenti articoli nella categoria {{$category->name}} ...</p>

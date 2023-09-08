@@ -2,10 +2,12 @@
 
 namespace App\Livewire;
 
+use App\Models\Article;
 use Livewire\Component;
 use App\Models\Category;
-use Illuminate\Pagination\Paginator;
 use Livewire\WithPagination;
+use Illuminate\Pagination\Paginator;
+
 class CategoryShow extends Component
 {
     use WithPagination;
@@ -16,7 +18,9 @@ class CategoryShow extends Component
     {
         Paginator::useBootstrap();
         $category=Category::find($this->categoryId);
-        $articles = $category->articles()->paginate(3);
-        return view('livewire.category-show', ['category'=>$category, 'articles' => $articles]);
+        $currentCategory=$category->articles()->paginate(3);
+        
+        // $articles=Article::paginate(6);
+        return view('livewire.category-show', ['category'=>$currentCategory]);
     }
 }
