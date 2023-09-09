@@ -1,36 +1,33 @@
 <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="/">Presto.it</a>
+      <div class="d-flex w-100 align-items-lg-end">
+        <a class="navbar-brand ms-3" href="/">Trovalo.it</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-           
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Categorie
-              </a>
-              <!-- MENU CATEGORIE -->
-              <ul id="dropdownMenu" class="dropdown-menu">
+          <ul class="navbar-nav w-100 mb-2 mb-lg-0">
+          
+          <!-- MENU CATEGORIE e BARRA DI RICERCA -->  
+          <div class="input-group mb-3"> 
+              <button id="categoriesButton" class="btn btn-outline-secondary dropdown-toggle" style="background-color: rgb(204, 204, 204); font-weight:bolder" type="button" data-bs-toggle="dropdown" aria-expanded="false">Categorie</button>   
+              <ul id="dropdownMenu" class="dropdown-menu"> 
                 @foreach($categories as $category)
                 <li><a class="dropdown-item" href="{{route('categories.show', [ str_replace( ' ', '-', strtolower($category->name) )])}}">{{$category->name}}</a></li>
                 @endforeach
-                
               </ul>
-          </li>
+              <form class="d-flex" role="search">
+              <input id="searchInput" class="form-control me-2" type="search" placeholder="Ricerca Trovalo.it" aria-label="Search">
+              <button class="btn text-black btn-warning me-2" type="submit">Cerca</button>
+              </form> 
+          </div>
+            
             <!-- AGGIUNGI ARTICOLO -->
             @if(auth()->check())
               <li class="nav-item me-2">
                 <a class="nav-link active" aria-current="page" href="{{route('articles.create')}}">Aggiungi Annuncio</a>
               </li>
             @endif
-            <!-- BARRA DI RICERCA -->
-            <form class="d-flex" role="search">
-            <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
-            <button class="btn text-black btn-outline-warning me-2" type="submit">Cerca</button>
-            </form>
-
+            
             <!-- LINK LOGIN REISTRATI E LOGOUT -->
             @if(auth()->check())
            <!-- MENU PROFILO -->
@@ -41,7 +38,6 @@
               
               <ul id="dropdownMenu" class="dropdown-menu">
                
-                
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">
                   <form action="/logout" method="post">
@@ -60,7 +56,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/login">Login</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item me-3">
               <a class="nav-link" href="/register">Registrati</a>
             </li>
             @endif
