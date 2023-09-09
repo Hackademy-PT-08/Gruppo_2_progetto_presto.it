@@ -13,16 +13,6 @@
 <body>
     <header>
         <x-navbar/>
-         <!--<div class="min-vh-100">
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <img src="/img/indexBackground.jpg" alt="">
-                </div>
-            </div>
-
-        </div>-->
-        <div class="hero"></div>
-
 
     </header> 
     <main>

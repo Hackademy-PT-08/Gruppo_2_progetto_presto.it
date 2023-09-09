@@ -1,6 +1,10 @@
 <x-layout>
+
+    <!-- Immagine hero homepage -->
+    <div class="hero"></div>
     
     <h2 class="text-center text-light mt-5">Gli ultimi articoli pubblicati</h2>
+
     <!-- Carosello con immagini che ruotano -->
     @if(count($lastArticles)>7)
         <div class="my-2 rotationContainer">

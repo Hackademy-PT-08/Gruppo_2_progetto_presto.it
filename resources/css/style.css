@@ -9,6 +9,7 @@ body {
 .navbar-brand {
     font-size: 50px;
 }
+
 .hero {
     background-image: url('../../public/img/indexBackground.JPG');
     background-repeat: inherit ;
@@ -17,9 +18,26 @@ body {
     height:700px;
 }
 
+#searchInput{
+    width: 250px ;       
 
+}
 
 #categoriesButton:hover{
     color:black;
     background-color: rgb(75, 75, 75) !important;
 }
+
+/* mediaquery per ricerca navbar */
+@media screen and (min-width:1250px) {
+    #searchInput {
+        width: 500px;       
+    }    
+}
+
+/* mediaquery per ricerca navbar
+@media screen and (min-width:1250px) {
+    #searchInput {
+        width: 500px;       
+    }    
+} */
