@@ -31,7 +31,7 @@
                         <!-- input di login per password -->
                         <input class="text-center col-9 col-lg-7 py-1 my-2" type="password" name="password" id="password" placeholder="password">
                         <!-- input per submit login -->
-                        <input class="form__submit-btn col-9 col-lg-7 py-1 my-2" type="submit" value="Accedi">
+                        <input class="btn col-9 col-lg-7 py-1 my-2 btn-warning text-dark" type="submit" value="Accedi">
                         <div class="col-9 d-flex justify-content-around py-1 my-2">
                                                         
                             
