@@ -34,10 +34,3 @@ body {
         width: 500px;       
     }    
 }
-
-/* mediaquery per ricerca navbar
-@media screen and (min-width:1250px) {
-    #searchInput {
-        width: 500px;       
-    }    
-} */
