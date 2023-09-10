@@ -38,7 +38,9 @@ class CategoryController extends Controller
      */
     public function show(Category $category, $categoryName)
     {
-        $category = Category::where('name', $categoryName)->first();
+        $category = Category::where('name', $categoryName)
+        ->where('is_accepted', true)
+        ->first();
 
         return view('categories.show', ['category'=>$category]);
     }

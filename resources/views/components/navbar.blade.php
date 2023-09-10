@@ -47,6 +47,17 @@
 
                   </form></a>
               </li>
+              @if(Auth::user()->is_revisor)
+                <li class="nav-item">
+                  <a href="{{route('revisors.index')}}" class="nav-link btn btn-outline seccess btn-sm position-relative" aria-current="page">
+                    Zona Revisore
+                  </a>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {{App\Models\Article::toBeRevisionedCount()}}
+                    <span class="visually-hidden">messaggio non letto</span>
+                  </span>
+                </li>
+              @endif
               
                 
               </ul>

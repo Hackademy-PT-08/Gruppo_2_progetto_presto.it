@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\CategoryController;
 
 /*
@@ -37,14 +38,26 @@ Route::get('/articles', [ArticleController::class, 'index'])->name('articles.ind
 // Rotta get che porta alla vista che mostra il dettaglio articolo
 Route::get('/article/{id}', [ArticleController::class, 'show'])->name('articles.show');
 
-// HOME Controller
-
-// Rotta che porta alla hompage del sito
-Route::get('/',[HomeController::class,'index'])->name('home.index');
-
 // Category Controller
 
 // Rotta che porta alla vista con tutte le categorie del sito
 Route::get('/categories',[CategoryController::class,'index'])->name('categories.index');
 // Rotta get che porta alla vista che mostra il dettaglio categoria
 Route::get('/categories/{categoryName}', [CategoryController::class, 'show'])->name('categories.show');
+
+
+// HOME Controller
+
+// Rotta che porta alla hompage del sito
+Route::get('/',[HomeController::class,'index'])->name('home.index');
+
+
+
+// Revisor Controller
+
+// Rotta che porta alla vista per il form del revisore
+Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisors.index');
+// Rotta per accettare l'annuncio
+Route::patch('/accept/article/{article}',[RevisorController::class,'acceptArticle'])->name('revisors.accept_article');
+// Rotta per rifiutare l'annuncio
+Route::patch('/reject/article/{article}',[RevisorController::class,'rejectArticle'])->name('revisors.reject_article');
