@@ -20,9 +20,9 @@
            <p> <a href="" class="text-white">Instagram</a></p>
           <p><a href="" class="text-white">YouTube</a></p> -->
 
-          </div> <div class="col-12 col-lg-5">
+          </div> <div class="col-12 col-lg-4">
             <p class="h3 text-warning mb-3">Newsletter</p>
-            <p><a href="" class="text-white">Resta aggiornato sulle nostre novità</a></p> 
+            <p class="text-white">Resta aggiornato sulle nostre novità</p> 
             <form>
               <div class="input-group">
                 <input type="text" class="form-control form-control-lg" placeholder="Email">
