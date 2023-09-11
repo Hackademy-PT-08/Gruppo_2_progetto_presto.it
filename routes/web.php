@@ -56,8 +56,8 @@ Route::get('/',[HomeController::class,'index'])->name('home.index');
 // Revisor Controller
 
 // Rotta che porta alla vista per il form del revisore
-Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisors.index');
+Route::get('/revisor/home',[RevisorController::class,'index'])->middleware('IsRevisor')->name('revisors.index');
 // Rotta per accettare l'annuncio
-Route::patch('/accept/article/{article}',[RevisorController::class,'acceptArticle'])->name('revisors.accept_article');
+Route::patch('/accept/article/{article}',[RevisorController::class,'acceptArticle'])->middleware('IsRevisor')->name('revisors.accept_article');
 // Rotta per rifiutare l'annuncio
-Route::patch('/reject/article/{article}',[RevisorController::class,'rejectArticle'])->name('revisors.reject_article');
+Route::patch('/reject/article/{article}',[RevisorController::class,'rejectArticle'])->middleware('IsRevisor')->name('revisors.reject_article');
