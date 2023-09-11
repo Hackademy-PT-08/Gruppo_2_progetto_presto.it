@@ -10,7 +10,7 @@
           <div class="col-12 col-lg-4">
           <p class="h3 text-warning mb-3"> Scoprici...</p>
            <p><a href="" class="text-white">Chi siamo</a></p> 
-           <p> <a href="" class="text-white">Lavora con noi</a></p>
+           <p> <a href="{{route('revisors.become.revisor')}}" class="text-white">Lavora con noi come Revisore</a></p>
           <p><a href="" class="text-white">FAQ</a></p>
           <p><a href="" class="text-white">Privacy</a></p>
         

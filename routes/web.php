@@ -61,3 +61,7 @@ Route::get('/revisor/home',[RevisorController::class,'index'])->middleware('IsRe
 Route::patch('/accept/article/{article}',[RevisorController::class,'acceptArticle'])->middleware('IsRevisor')->name('revisors.accept_article');
 // Rotta per rifiutare l'annuncio
 Route::patch('/reject/article/{article}',[RevisorController::class,'rejectArticle'])->middleware('IsRevisor')->name('revisors.reject_article');
+// Rotta per richiedere di diventare revisore
+Route::get('/revisor/request',[RevisorController::class,'becomeRevisor'])->middleware(['auth','verified'])->name('revisors.become.revisor');
+// Rotta per rendere un utente revisore
+Route::get('/revisor/make/{user}',[RevisorController::class,'makeRevisor'])->name('revisors.make.revisor');

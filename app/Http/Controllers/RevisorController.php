@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Article;
 use App\Models\Revisor;
+use App\Mail\BecomeRevisor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Artisan;
 
 class RevisorController extends Controller
 {
@@ -25,12 +30,26 @@ class RevisorController extends Controller
     }
 
     
-//    Funzione per rifiutare annunci
+    // Funzione per rifiutare annunci
     public function rejectArticle(Article $article)
     {
         $article->setAccepted(false);
         return redirect()->back()->with('message', "Hai rifiutato l'annuncio");
     }
+
+    // Funzione per richiedere di diventare revisore
+    public function becomeRevisor()
+    {
+        Mail::to('admin@trovalo.it')->send(new BecomeRevisor(Auth::user()));
+        return redirect()->back()->with('message', "La tua richiesta è stata inviata correttamente");
+    }
+
+     // Funzione per rendere revisore
+     public function makeRevisor(User $user)
+     {
+        Artisan::call('presto:make-user-revisor', ["email"=>$user->email]);
+        return redirect('/')->with('message', "l'utente $user->name è ora revisore");
+     }
 
     /**
      * Show the form for editing the specified resource.
