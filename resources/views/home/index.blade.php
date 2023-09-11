@@ -1,11 +1,18 @@
 <x-layout>
 
     <!-- Immagine hero homepage -->
+    <!-- MESSAGGIO TENTATIVO DI ACCESSO ALLA ZONA REVISORI SENZA AUTORIZZAZIONE -->
+     @if(session('access.denied'))
+        <div class="alert alert-danger">
+            {{ session('access.denied') }}
+        </div>
+    @endif
     <div class="hero">
     <div class="content">
           <div class="container">
             <div class="row">
               <div class="col-12 text-center mt-4 pt-5">
+            
                <h1><strong>
                   Trovalo.it i migliori affari <br>nella tua città!</h1> </strong>               
                     </div>

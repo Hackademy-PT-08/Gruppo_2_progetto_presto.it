@@ -18,7 +18,7 @@ class RevisorController extends Controller
     }
 
     // Funzione per accettare articoli
-    public function acceptArticle()
+    public function acceptArticle(Article $article)
     {
         $article->setAccepted(true);
         return redirect()->back()->with('message', "Hai accettato l'annuncio");
@@ -26,7 +26,7 @@ class RevisorController extends Controller
 
     
 //    Funzione per rifiutare annunci
-    public function rejectArticle(Revisor $revisor)
+    public function rejectArticle(Article $article)
     {
         $article->setAccepted(false);
         return redirect()->back()->with('message', "Hai rifiutato l'annuncio");
